@@ -1,0 +1,36 @@
+<MainWidget>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    canvas.before:
+        Color:
+            rgba: 1, 0.7, 0.8, 1  # Tom rosa pastel
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    TextInput:
+        id: url_input
+        hint_text: "Cole o link do YouTube aqui"
+        size_hint_y: None
+        height: 40
+
+    ToggleButton:
+        id: audio_toggle
+        text: "Baixar como MP3"
+        size_hint_y: None
+        height: 40
+        group: "format"
+
+    Button:
+        text: "Iniciar Download"
+        size_hint_y: None
+        height: 50
+        on_press: root.iniciar_download()
+
+    Label:
+        id: status_label
+        text: "Status do Download"
+        size_hint_y: None
+        height: 40
